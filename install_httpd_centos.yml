@@ -1,0 +1,14 @@
+---
+- hosts: 192.168.56.105
+  become: true
+  tasks:
+  
+  - name: install httpd 
+    package:
+     name: httpd
+     state: present
+
+  - name: start httpd
+    service:
+     name: httpd
+     state: started
