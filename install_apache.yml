@@ -4,13 +4,10 @@
   tasks:
 
 
-  - name: update repository index
-    apt:
+  - name: install apache2 package and php packages for Ubuntu
+    package:
+      name:
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+      state: latest
       update_cache: yes
-
-  - name: install apache2 package
-    apt:
-      name: apache2
-  - name: add PHP support for apache
-    apt:
-      name: libapache2-mod-php
